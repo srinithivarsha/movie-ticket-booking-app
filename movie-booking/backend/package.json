@@ -1,5 +1,5 @@
 {
-  "name": "movie-booking-backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "Movie Ticket Booking System Backend",
   "main": "server.js",
