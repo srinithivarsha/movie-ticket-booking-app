@@ -1,0 +1,259 @@
+.booking-page { min-height: 100vh; padding: 30px 0 60px; }
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.booking-movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 90px;
+}
+.booking-poster {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.booking-movie-title {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.booking-movie-meta { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.booking-movie-time { font-size: 14px; color: var(--text-secondary); }
+.booking-available { font-size: 13px; margin-top: 4px; }
+.text-red { color: var(--primary); font-weight: 600; }
+.text-green { color: var(--success); font-weight: 600; }
+
+.booking-form-card { padding: 28px; }
+.booking-form-title {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 20px; font-weight: 700; margin-bottom: 28px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+
+.date-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.date-opt {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-card2);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+.date-opt:hover { border-color: var(--primary); color: var(--primary); }
+.date-opt.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.selected-seats-bar {
+  border: 1px solid var(--border);
+  background: var(--bg-card2);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+.text-muted { color: var(--text-muted); }
+
+/* Seat Grid Visual */
+.seat-grid-visual {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.screen-bar {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  background: linear-gradient(to bottom, rgba(224,45,45,0.2), transparent);
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin-bottom: 16px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+.seat-number {
+  width: 100%;
+  min-height: 30px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+.seat-number.available:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.seat-number.available { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.35); color: #10b981; }
+.seat-number.selected { background: var(--primary); border-color: var(--primary); color: #fff; }
+.seat-number.booked {
+  background: var(--bg-dark);
+  border-color: var(--border);
+  color: #64748b;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.seat-dot {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.seat-dot.available { background: rgba(16,185,129,0.25); border: 1px solid rgba(16,185,129,0.6); }
+.seat-dot.selected { background: var(--primary); }
+.seat-dot.booked { background: var(--bg-dark); border: 1px solid var(--border); }
+
+.seat-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.seat-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.seat-legend .seat-dot {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+/* Price Summary */
+.price-summary {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.price-row.total {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.price-divider { border: none; border-top: 1px dashed var(--border); margin: 4px 0; }
+
+/* Success Page */
+.booking-success-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(ellipse at center, rgba(16,185,129,0.08) 0%, transparent 70%);
+}
+
+.success-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.success-icon { margin-bottom: 20px; }
+.success-card h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.success-card > p { color: var(--text-secondary); font-size: 14px; margin-bottom: 28px; }
+
+.ticket-card {
+  background: var(--bg-card2);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.ticket-divider { border: none; border-top: 2px dashed var(--border); margin-bottom: 16px; }
+.ticket-movie { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+.ticket-details { display: flex; flex-direction: column; gap: 10px; }
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.ticket-row.total {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .booking-layout { grid-template-columns: 1fr; }
+  .booking-movie-info { flex-direction: row; position: static; }
+  .booking-poster { width: 100px; height: 150px; }
+}
